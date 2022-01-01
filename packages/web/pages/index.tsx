@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import Head from "next/head";
-import LocationSection from "./components/sections/Location";
 import RSVPSection from "./components/sections/RSVP";
 import ScheduleSection from "./components/sections/Schedule";
 import Section from "./components/Section";
@@ -18,14 +17,15 @@ export default function Index(): ReactNode {
       <Head>
         <title>{SITE_TITLE}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="robots" content="noindex" />
       </Head>
       <div className="h-auto 2xl:h-screen bg-theme-background bg-cover bg-no-repeat bg-center bg-fixed overflow-auto font-theme-primary">
         {/* Content Container */}
         <div className="m-auto md:w-3/5 lg:w-48rem pt-20">
           {/* Header */}
           <header className="z-0 fixed left-2/4 -translate-x-1/2 text-center md:mt-0">
-            <h1 className="font-theme-primary font-semibold text-6xl text-theme-primary text-shadow-xl">
-              <span className="block md:inline-block">Eventflare</span>
+            <h1 className="font-theme-secondary font-semibold text-6xl text-theme-primary text-shadow-xl">
+              <span className="block md:inline-block">Carson & Tatianna</span>
             </h1>
             <h2 className="mt-2 font-theme-primary font-extralight text-2xl md:text-3xl text-white">
               <span className="block md:inline-block">{EVENT_LOCAL_DATE}</span>
@@ -37,7 +37,7 @@ export default function Index(): ReactNode {
           </header>
 
           {/* Main */}
-          <main className="relative bg-white dark:bg-theme-gray text-theme-black dark:text-white rounded-t-6xl mt-96 md:mt-64 lg:mt-48 md:rounded-6xl md:shadow-2xl text-lg leading-8 p-8">
+          <main className="relative bg-theme-white dark:bg-theme-gray text-theme-black dark:text-white rounded-t-6xl mt-96 md:mt-64 lg:mt-48 md:rounded-6xl md:shadow-2xl text-lg leading-8 p-8">
             <Section name="RSVP" className="pb-6">
               <RSVPSection />
             </Section>
@@ -48,8 +48,16 @@ export default function Index(): ReactNode {
               <ScheduleSection />
             </Section>
             {MAPS_API_KEY && (
-              <Section name="Location" className="pb-6 drop-shadow-2xl">
-                <LocationSection mapsApiKey={MAPS_API_KEY} />
+              <Section
+                name="Location"
+                url={EVENT_LOCATION.url}
+                className="pb-6 drop-shadow-2xl"
+              >
+                <iframe
+                  src={EVENT_LOCATION.myMapUrl}
+                  width="100%"
+                  height="400px"
+                ></iframe>
               </Section>
             )}
           </main>
@@ -62,24 +70,12 @@ export default function Index(): ReactNode {
                 className="transition duration-300 ease-in-out text-theme-accent hover:text-theme-primary"
                 href="https://github.com/CS-5/eventflare"
               >
-                CS-5
+                Carson
               </a>
               ,&nbsp;
             </span>
             <span className="block md:inline-block">
               powered by Cloudflare Workers and Pages.
-            </span>
-            <span className="block">
-              Background image by{" "}
-              <a
-                className="transition duration-300 ease-in-out text-theme-accent hover:text-theme-primary"
-                href="https://unsplash.com/@samuelpereira"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @samuelpereira
-              </a>{" "}
-              on Unsplash.
             </span>
           </footer>
         </div>

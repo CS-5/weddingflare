@@ -1,15 +1,17 @@
 /* Overview */
-export const SITE_TITLE = "Eventflare"; // Note: Title is used to set the site title and from name (email)
-export const SITE_URL = "https://eventflare.carsonseese.com";
+export const SITE_TITLE = "Carson & Tatianna"; // Note: Title is used to set the site title and from name (email)
+export const SITE_URL = "https://carsonandtatianna.com";
 
-/* Event Loocation, Date, Time */
+/* Event Location, Date, Time */
 export const EVENT_LOCATION = {
-  address: "Nothing, AZ",
-  lat: 34.48,
-  lng: -113.3359,
+  url: process.env.LOCATION_URL ?? "",
+  myMapUrl: process.env.LOCATION_MYMAP_URL ?? "",
+  address: process.env.LOCATION_ADDRESS ?? "",
+  lat: process.env.LOCATION_LAT ?? 0,
+  lng: process.env.LOCATION_LNG ?? 0,
 };
 export const EVENT_TIMEZONE = "America/New_York";
-export const EVENT_DATETIME = new Date("August 01, 2022 14:00");
+export const EVENT_DATETIME = new Date("June 12, 2022 15:00");
 export const EVENT_LOCAL_TIME = EVENT_DATETIME.toLocaleTimeString("en-US", {
   timeZone: EVENT_TIMEZONE,
   hour: "2-digit",

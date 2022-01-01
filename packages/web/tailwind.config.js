@@ -1,9 +1,12 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   mode: "jit",
-  darkMode: "media",
+  darkMode: "class",
   theme: {
     colors: {
       transparent: "transparent",
@@ -12,13 +15,14 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        "theme-primary": ["Inter", "sans-serif"],
-        "theme-secondary": ["Oswald", "sans-serif"],
+        "theme-primary": ["Merriweather", "serif"],
+        "theme-secondary": ["Dancing Script", "cursive"],
       },
       colors: {
-        "theme-primary": colors.orange[500],
-        "theme-accent": colors.blue[500],
-        "theme-gray": colors.gray[700],
+        "theme-primary": colors.yellow[600],
+        "theme-accent": colors.lime[700],
+        "theme-gray": colors.stone[700],
+        "theme-white": colors.orange[50],
       },
       backgroundImage: {
         "theme-background": "url('/image/background.jpg')",
@@ -31,6 +35,5 @@ module.exports = {
       },
     },
   },
-  variants: {},
   plugins: [require("@tailwindcss/forms"), require("tailwindcss-textshadow")],
 };

@@ -39,10 +39,12 @@ const RSVPSection: FunctionComponent = () => {
           name: SITE_TITLE,
           email: EMAIL_FROM,
         },
-        subject: "Eventflare RSVP Confirmation!",
-        body: `${data.fName}, thanks for your RSVP. This email is just confirming that we received it.
+        subject: "C&T Wedding RSVP Confirmation!",
+        body: `Hi ${data.fName}, 
+        
+Thanks for your RSVP! We are looking forward to having you join us!
 
-As a reminder, the event is taking place at ${EVENT_LOCATION.address} on ${EVENT_LOCAL_DATE} at ${EVENT_LOCAL_TIME}. Looking forward to seeing you there!`,
+As a reminder, the wedding is taking place at ${EVENT_LOCATION.address} (Google Maps driving directions: ${EVENT_LOCATION.url}). It will be held on ${EVENT_LOCAL_DATE} at ${EVENT_LOCAL_TIME}.`,
       };
     }
 
@@ -88,7 +90,7 @@ As a reminder, the event is taking place at ${EVENT_LOCATION.address} on ${EVENT
         </div>
         <div className="flex justify-end">
           <button
-            className="w-full md:w-auto text-white transition duration-200 ease-in-out bg-blue-600 hover:bg-blue-800 shadow drop-shadow-lg font-bold py-2 px-6 rounded-2xl"
+            className="w-full md:w-auto text-white transition duration-200 ease-in-out bg-theme-accent hover:bg-theme-primary shadow drop-shadow-lg font-bold py-2 px-6 rounded-2xl"
             type="submit"
           >
             {submitting ? "Submitting..." : "RSVP"}

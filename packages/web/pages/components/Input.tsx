@@ -15,7 +15,7 @@ const InputComponent = (
 ) => {
   return (
     <div className="flex flex-col">
-      <label className="bg-gray-200 rounded-xl ring-2 ring-transparent focus-within:ring-blue-500 px-3">
+      <label className="bg-gray-200 rounded-xl ring-2 ring-transparent focus-within:ring-theme-accent px-3">
         <span className="block uppercase tracking-wide font-bold text-gray-500 text-xs mt-2">
           {label}
         </span>
