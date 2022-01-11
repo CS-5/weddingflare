@@ -30,6 +30,9 @@ module.exports = {
       width: {
         "48rem": "48rem",
       },
+      height: {
+        "30rem": "30rem",
+      },
       borderRadius: {
         "6xl": "3rem",
       },

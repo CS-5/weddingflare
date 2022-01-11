@@ -13,12 +13,9 @@ import {
 } from "../constants";
 
 // Images
-import topLeftFlower from "../public/image/flowers/top-left.png";
-import topRightFlower from "../public/image/flowers/top-right.png";
-import bottomLeftFlower from "../public/image/flowers/bottom-left.png";
-import bottomRightFlower from "../public/image/flowers/bottom-right.png";
-import leftFlower from "../public/image/flowers/left.png";
-import rightFlower from "../public/image/flowers/right.png";
+import topFlower from "../public/image/flowers/top.png";
+import bottomFlower from "../public/image/flowers/bottom.png";
+import middleFlower from "../public/image/flowers/middle.png";
 
 export default function Index(): ReactNode {
   return (
@@ -73,61 +70,39 @@ export default function Index(): ReactNode {
             </div>
 
             {/* Background Graphics */}
-            <div>
-              <div>
-                <Image
-                  src={topLeftFlower}
-                  layout="fill"
-                  objectFit="contain"
-                  className="absolute left-0 -top-0"
-                  alt=""
-                />
-              </div>
-              {/*
-              <div className="w-2">
-                <Image
-                  src={topRightFlower}
-                  layout="fill"
-                  objectFit="contain"
-                  className="absolute right-0 top-0"
-                  alt=""
-                />
-              </div>
-
+            <div className="absolute top-0 left-0 w-full h-96 opacity-60">
               <Image
-                src={bottomLeftFlower}
+                src={topFlower}
                 layout="fill"
                 objectFit="contain"
-                className="absolute left-0 bottom-0"
+                objectPosition="top"
+                className="rounded-t-6xl"
                 alt=""
               />
+            </div>
+            <div className="absolute bottom-0 left-0 w-full md:h-96 opacity-60">
               <Image
-                src={bottomRightFlower}
+                src={bottomFlower}
                 layout="fill"
                 objectFit="contain"
-                className="absolute right-0 bottom-0"
+                objectPosition="bottom"
+                className="md:rounded-6xl"
                 alt=""
               />
+            </div>
+            <div className="absolute top-1/3 left-0 w-full md:h-30rem opacity-60">
               <Image
-                src={leftFlower}
+                src={middleFlower}
                 layout="fill"
                 objectFit="contain"
-                className="absolute align-middle left-0 top-1/2"
+                objectPosition="middle"
                 alt=""
               />
-              <Image
-                src={rightFlower}
-                layout="fill"
-                objectFit="contain"
-                className="absolute align-middle left-0 top-1/2"
-                alt=""
-              />
-              */}
             </div>
           </main>
 
           {/* Footer */}
-          <footer className="bg-white dark:bg-theme-gray text-theme-gray dark:text-white md:bg-opacity-0 md:text-white md:shadow-2xl pt-0 pb-5 md:pt-5 text-center">
+          <footer className="relative z-10 bg-theme-white dark:bg-theme-gray text-theme-gray dark:text-white md:bg-opacity-0 md:text-white md:shadow-2xl pt-0 pb-5 md:pt-5 text-center">
             <span className="block md:inline-block">
               Made with ❤️ by{" "}
               <a
