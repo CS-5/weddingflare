@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import RSVPSection from "./components/sections/RSVP";
 import ScheduleSection from "./components/sections/Schedule";
 import Section from "./components/Section";
@@ -10,6 +11,14 @@ import {
   EVENT_LOCATION,
   SITE_TITLE,
 } from "../constants";
+
+// Images
+import topLeftFlower from "../public/image/flowers/top-left.png";
+import topRightFlower from "../public/image/flowers/top-right.png";
+import bottomLeftFlower from "../public/image/flowers/bottom-left.png";
+import bottomRightFlower from "../public/image/flowers/bottom-right.png";
+import leftFlower from "../public/image/flowers/left.png";
+import rightFlower from "../public/image/flowers/right.png";
 
 export default function Index(): ReactNode {
   return (
@@ -38,28 +47,83 @@ export default function Index(): ReactNode {
 
           {/* Main */}
           <main className="relative bg-theme-white dark:bg-theme-gray text-theme-black dark:text-white rounded-t-6xl mt-96 md:mt-64 lg:mt-48 md:rounded-6xl md:shadow-2xl text-lg leading-8 p-8">
-            <Section name="RSVP" className="pb-6">
-              <RSVPSection />
-            </Section>
-            <Section name="About" className="pb-6">
-              <AboutSection />
-            </Section>
-            <Section name="Schedule" className="pb-6">
-              <ScheduleSection />
-            </Section>
-            {MAPS_API_KEY && (
-              <Section
-                name="Location"
-                url={EVENT_LOCATION.url}
-                className="pb-6 drop-shadow-2xl"
-              >
-                <iframe
-                  src={EVENT_LOCATION.myMapUrl}
-                  width="100%"
-                  height="400px"
-                ></iframe>
+            <div className="relative z-10">
+              <Section name="RSVP" className="pb-6">
+                <RSVPSection />
               </Section>
-            )}
+              <Section name="About" className="pb-6">
+                <AboutSection />
+              </Section>
+              <Section name="Schedule" className="pb-6">
+                <ScheduleSection />
+              </Section>
+              {MAPS_API_KEY && (
+                <Section
+                  name="Location"
+                  url={EVENT_LOCATION.url}
+                  className="pb-6 drop-shadow-2xl"
+                >
+                  <iframe
+                    src={EVENT_LOCATION.myMapUrl}
+                    width="100%"
+                    height="400px"
+                  ></iframe>
+                </Section>
+              )}
+            </div>
+
+            {/* Background Graphics */}
+            <div>
+              <div>
+                <Image
+                  src={topLeftFlower}
+                  layout="fill"
+                  objectFit="contain"
+                  className="absolute left-0 -top-0"
+                  alt=""
+                />
+              </div>
+              {/*
+              <div className="w-2">
+                <Image
+                  src={topRightFlower}
+                  layout="fill"
+                  objectFit="contain"
+                  className="absolute right-0 top-0"
+                  alt=""
+                />
+              </div>
+
+              <Image
+                src={bottomLeftFlower}
+                layout="fill"
+                objectFit="contain"
+                className="absolute left-0 bottom-0"
+                alt=""
+              />
+              <Image
+                src={bottomRightFlower}
+                layout="fill"
+                objectFit="contain"
+                className="absolute right-0 bottom-0"
+                alt=""
+              />
+              <Image
+                src={leftFlower}
+                layout="fill"
+                objectFit="contain"
+                className="absolute align-middle left-0 top-1/2"
+                alt=""
+              />
+              <Image
+                src={rightFlower}
+                layout="fill"
+                objectFit="contain"
+                className="absolute align-middle left-0 top-1/2"
+                alt=""
+              />
+              */}
+            </div>
           </main>
 
           {/* Footer */}
