@@ -102,7 +102,7 @@ export default function Index(): ReactNode {
           </main>
 
           {/* Footer */}
-          <footer className="relative z-10 bg-theme-white dark:bg-theme-gray text-theme-gray dark:text-white md:bg-opacity-0 md:text-white md:shadow-2xl pt-0 pb-5 md:pt-5 text-center">
+          <footer className="relative z-10 bg-theme-white dark:bg-theme-gray text-theme-gray dark:text-white md:bg-opacity-0 md:text-white pt-0 pb-5 md:pt-5 text-center">
             <span className="block md:inline-block">
               Made with ❤️ by{" "}
               <a
