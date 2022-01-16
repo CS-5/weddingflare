@@ -25,10 +25,16 @@ module.exports = {
         "theme-white": colors.orange[50],
       },
       backgroundImage: {
-        "theme-background": "url('/image/background.jpg')",
+        "theme-background": "url('/image/background2.jpg')",
       },
       width: {
         "48rem": "48rem",
+      },
+      margin: {
+        "32rem": "32rem",
+        "40rem": "40rem",
+        "48rem": "48rem",
+        "54rem": "54rem",
       },
       height: {
         "30rem": "30rem",

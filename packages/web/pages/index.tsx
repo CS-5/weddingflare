@@ -26,16 +26,16 @@ export default function Index(): ReactNode {
         <meta name="robots" content="noindex" />
       </Head>
       <div className="h-auto 2xl:h-screen bg-theme-background bg-cover bg-no-repeat bg-center bg-fixed overflow-auto font-theme-primary">
-        {/* Content Container */}
-        <div className="m-auto md:w-3/5 lg:w-48rem pt-20">
+        {/* Content Container                         \/ This padding is a weird work around and I'd like to get rid of it*/}
+        <div className="m-auto md:w-10/12 lg:w-48rem pt-52 md:pt-28">
           {/* Header */}
           <header className="z-0 fixed left-2/4 -translate-x-1/2 text-center md:mt-0">
-            <h1 className="font-theme-secondary font-semibold text-6xl text-theme-primary text-shadow-xl">
+            <h1 className="font-theme-secondary font-semibold text-5xl md:text-8xl text-theme-primary text-shadow-xl">
               <span className="block md:inline-block">Carson & Tatianna</span>
             </h1>
             <h2 className="mt-2 font-theme-primary font-extralight text-2xl md:text-3xl text-white">
               <span className="block md:inline-block">{EVENT_LOCAL_DATE}</span>
-              <span className="hidden md:inline-block">&nbsp;-&nbsp;</span>
+              <span className="hidden lg:inline-block">&nbsp;-&nbsp;</span>
               <span className="block text-1xl md:inline-block">
                 {EVENT_LOCATION.address}
               </span>
@@ -43,7 +43,7 @@ export default function Index(): ReactNode {
           </header>
 
           {/* Main */}
-          <main className="relative bg-theme-white dark:bg-theme-gray text-theme-black dark:text-white rounded-t-6xl mt-96 md:mt-64 lg:mt-48 md:rounded-6xl md:shadow-2xl text-lg leading-8 p-8">
+          <main className="relative bg-theme-white dark:bg-theme-gray text-theme-black dark:text-white rounded-t-6xl mt-32rem md:mt-48rem lg:mt-40rem md:rounded-6xl md:shadow-2xl text-lg leading-8 p-8">
             <div className="relative z-10">
               <Section name="RSVP" className="pb-6">
                 <RSVPSection />
