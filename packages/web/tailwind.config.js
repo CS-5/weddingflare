@@ -15,32 +15,14 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        "theme-primary": ["Merriweather", "serif"],
-        "theme-secondary": ["Dancing Script", "cursive"],
+        "theme-header": ["Frank Ruhl Libre", "serif"],
+        "theme-title": ["Dancing Script", "cursive"],
       },
       colors: {
         "theme-primary": colors.yellow[600],
         "theme-accent": colors.lime[700],
-        "theme-gray": colors.stone[700],
+        "theme-gray": colors.stone[600],
         "theme-white": colors.orange[50],
-      },
-      backgroundImage: {
-        "theme-background": "url('/image/background2.jpg')",
-      },
-      width: {
-        "48rem": "48rem",
-      },
-      margin: {
-        "32rem": "32rem",
-        "40rem": "40rem",
-        "48rem": "48rem",
-        "54rem": "54rem",
-      },
-      height: {
-        "30rem": "30rem",
-      },
-      borderRadius: {
-        "6xl": "3rem",
       },
     },
   },

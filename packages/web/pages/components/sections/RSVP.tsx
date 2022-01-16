@@ -90,7 +90,7 @@ As a reminder, the wedding is taking place at ${EVENT_LOCATION.address} (Google 
         </div>
         <div className="flex justify-end">
           <button
-            className="w-full md:w-auto text-white transition duration-200 ease-in-out bg-theme-accent hover:bg-theme-primary shadow drop-shadow-lg font-bold py-2 px-6 rounded-2xl"
+            className="w-full md:w-auto text-white transition duration-200 ease-in-out bg-theme-accent hover:bg-theme-primary shadow drop-shadow-lg py-2 px-6 rounded-2xl"
             type="submit"
           >
             {submitting ? "Submitting..." : "RSVP"}
