@@ -1,4 +1,5 @@
 const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
@@ -15,8 +16,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        "theme-header": ["Frank Ruhl Libre", "serif"],
-        "theme-title": ["Dancing Script", "cursive"],
+        serif: ["Frank Ruhl Libre", ...defaultTheme.fontFamily.serif],
+        cursive: ["Dancing Script"],
       },
       colors: {
         "theme-primary": colors.yellow[600],

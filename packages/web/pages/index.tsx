@@ -41,13 +41,13 @@ export default function Index(): ReactNode {
 
         {/* Header */}
         <header className="z-0 fixed left-2/4 -translate-x-1/2 text-center pt-20 md:pt-28 w-full md:w-10/12">
-          <h1 className="font-theme-title text-6xl md:text-8xl text-theme-primary text-shadow-l">
+          <h1 className="font-cursive text-6xl md:text-8xl text-theme-primary text-shadow-l">
             <span className="block md:inline-block">
               <span className="text-9xl">C</span>arson &{" "}
               <span className="text-9xl tracking-[-0.2em]">T</span>atianna
             </span>
           </h1>
-          <h2 className="mt-2 font-theme-header font-extralight text-2xl md:text-3xl text-white">
+          <h2 className="mt-2 font-serif text-2xl md:text-3xl text-white">
             <span className="block md:hidden">&mdash;</span>
             <span className="block md:inline-block">{EVENT_LOCAL_DATE}</span>
             <span className="hidden md:inline-block">&nbsp;&mdash;&nbsp;</span>
