@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { SCHEDULE } from "../../../constants";
+import site from "../../../site.json";
 
 /*
 
@@ -17,7 +17,7 @@ const ScheduleSection: FunctionComponent = () => {
         </tr>
       </thead>
       <tbody>
-        {SCHEDULE.map((row, index) => (
+        {site.event.schedule.map((row, index) => (
           <tr className="border" key={index}>
             <td className="border pl-3">{row.time}</td>
             <td className="border pl-3">{row.description}</td>

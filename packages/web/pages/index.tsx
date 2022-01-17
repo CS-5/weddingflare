@@ -5,12 +5,8 @@ import RSVPSection from "./components/sections/RSVP";
 import ScheduleSection from "./components/sections/Schedule";
 import Section from "./components/Section";
 import AboutSection from "./components/sections/About";
-import {
-  EVENT_LOCAL_DATE,
-  MAPS_API_KEY,
-  EVENT_LOCATION,
-  SITE_TITLE,
-} from "../constants";
+
+import site from "../site.json";
 
 // Images
 import background from "../public/image/background2.jpg";
@@ -22,7 +18,7 @@ export default function Index(): ReactNode {
   return (
     <>
       <Head>
-        <title>{SITE_TITLE}</title>
+        <title>{site.name}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="robots" content="noindex" />
       </Head>
@@ -49,10 +45,19 @@ export default function Index(): ReactNode {
           </h1>
           <h2 className="mt-2 font-serif text-2xl md:text-3xl text-white">
             <span className="block md:hidden">&mdash;</span>
-            <span className="block md:inline-block">{EVENT_LOCAL_DATE}</span>
+            <span className="block md:inline-block">
+              {new Date(
+                `${site.event.date} ${site.event.time}`,
+              ).toLocaleDateString("en-US", {
+                timeZone: site.event.timezone,
+                month: "long",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </span>
             <span className="hidden md:inline-block">&nbsp;&mdash;&nbsp;</span>
             <span className="block text-1xl md:inline-block">
-              {EVENT_LOCATION.address}
+              {site.event.location.address}
             </span>
           </h2>
         </header>
@@ -84,21 +89,19 @@ export default function Index(): ReactNode {
             <Section name="Schedule" className="pt-8">
               <ScheduleSection />
             </Section>
-            {MAPS_API_KEY && (
-              <Section
-                name="Location"
-                url={EVENT_LOCATION.url}
-                className="pt-8"
-              >
-                <div className="overflow-hidden rounded-[3rem] drop-shadow-xl">
-                  <iframe
-                    src={EVENT_LOCATION.myMapUrl}
-                    width="100%"
-                    height="400px"
-                  ></iframe>
-                </div>
-              </Section>
-            )}
+            <Section
+              name="Location"
+              url={site.event.location.url}
+              className="pt-8"
+            >
+              <div className="overflow-hidden rounded-[3rem] drop-shadow-xl">
+                <iframe
+                  src={site.event.location.myMapUrl}
+                  width="100%"
+                  height="400px"
+                ></iframe>
+              </div>
+            </Section>
           </div>
 
           {/* Background Graphics */}
@@ -109,6 +112,7 @@ export default function Index(): ReactNode {
               objectFit="contain"
               objectPosition="top"
               className="rounded-t-[3rem]"
+              priority={true}
               alt=""
             />
           </div>

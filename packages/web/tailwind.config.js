@@ -9,11 +9,6 @@ module.exports = {
   mode: "jit",
   darkMode: "class",
   theme: {
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
-      ...colors,
-    },
     extend: {
       fontFamily: {
         serif: ["Frank Ruhl Libre", ...defaultTheme.fontFamily.serif],
