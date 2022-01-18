@@ -1,14 +1,9 @@
-import React, { FunctionComponent, useState } from "react";
-import { RSVP } from "@eventflare/lib";
+import { FunctionComponent, useState } from "react";
+import { RSVP } from "../../../types";
 import { useForm } from "react-hook-form";
-import {
-  EMAIL_FROM,
-  EVENT_LOCAL_DATE,
-  SITE_TITLE,
-  EVENT_LOCATION,
-  EVENT_LOCAL_TIME,
-} from "../../../constants";
-import Input from "../Input";
+import TextInput from "../input/TextInput";
+import site from "../../../site.json";
+import RadioButtonInput from "../input/RadioButtonInput";
 
 /*
 
@@ -16,12 +11,8 @@ This section is a RSVP form.
 
 */
 
-interface RSVPForm extends Omit<RSVP, "number"> {
-  number: string;
-}
-
 const RSVPSection: FunctionComponent = () => {
-  const { register, handleSubmit, reset } = useForm<RSVPForm>();
+  const { register, handleSubmit, reset } = useForm<RSVP>();
   const [submitting, setSubmitting] = useState(false);
 
   const onSubmit = handleSubmit(async (data) => {
@@ -29,11 +20,12 @@ const RSVPSection: FunctionComponent = () => {
 
     const payload: RSVP = {
       ...data,
-      number: parseInt(data.number),
+      number: data.number,
     };
 
     // Set message if email was recorded in the form and if EMAIL_FROM was configured at build time
-    if (EMAIL_FROM && data.email) {
+    /*
+    if (site.secrets && data.email) {
       payload.message = {
         from: {
           name: SITE_TITLE,
@@ -46,7 +38,7 @@ Thanks for your RSVP! We are looking forward to having you join us!
 
 As a reminder, the wedding is taking place at ${EVENT_LOCATION.address} (Google Maps driving directions: ${EVENT_LOCATION.url}). It will be held on ${EVENT_LOCAL_DATE} at ${EVENT_LOCAL_TIME}.`,
       };
-    }
+    }*/
 
     const res = await fetch("/api/rsvp", {
       method: "POST",
@@ -70,23 +62,34 @@ As a reminder, the wedding is taking place at ${EVENT_LOCATION.address} (Google 
     <div className="flex justify-center">
       <form className="w-full max-w-lg inline-block" onSubmit={onSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mb-4 text-gray-700 text-base">
-          <Input label="First Name" {...register("fName")} required />
-          <Input label="Last Name" {...register("lName")} required />
-          <Input
+          <TextInput label="First Name" {...register("fName")} required />
+          <TextInput label="Last Name" {...register("lName")} required />
+          <label className="flex flex-col bg-gray-200 rounded-xl px-3">
+            <span className="block uppercase tracking-wide font-bold text-gray-500 text-xs mt-2">
+              I will...
+            </span>
+            <div className="flex">
+              <RadioButtonInput
+                label="Be Attending"
+                {...register("attending")}
+                checked
+                required
+              />
+              <RadioButtonInput
+                label="Not be attending"
+                {...register("attending")}
+                required
+              />
+            </div>
+          </label>
+
+          <TextInput
             label="# Attending"
             {...register("number")}
             min="1"
             type="number"
             required
           />
-          {EMAIL_FROM && (
-            <Input
-              label="Email"
-              {...register("email")}
-              type="email"
-              helperText="Optional, for calendar invite"
-            />
-          )}
         </div>
         <div className="flex justify-end">
           <button

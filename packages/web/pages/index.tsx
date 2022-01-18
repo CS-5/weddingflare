@@ -105,7 +105,7 @@ export default function Index(): ReactNode {
           </div>
 
           {/* Background Graphics */}
-          <div className="absolute top-0 left-0 w-full h-96 opacity-60">
+          <div className="hidden absolute top-0 left-0 w-full h-96 opacity-60">
             <Image
               src={topFlower}
               layout="fill"

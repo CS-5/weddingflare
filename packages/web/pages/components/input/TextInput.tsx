@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, forwardRef, Ref } from "react";
 
-interface InputProps
+interface TextInputProps
   extends DetailedHTMLProps<
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
@@ -9,13 +9,13 @@ interface InputProps
   helperText?: string;
 }
 
-const InputComponent = (
-  { label, helperText, ...props }: InputProps,
+const TextInputComponent = (
+  { label, helperText, ...props }: TextInputProps,
   ref: Ref<HTMLInputElement>,
 ) => {
   return (
     <div className="flex flex-col">
-      <label className="bg-gray-200 rounded-xl ring-2 ring-transparent focus-within:ring-theme-accent px-3">
+      <label className="bg-gray-200 rounded-xl ring-2 ring-transparent transition duration-300 ease-in-out focus-within:ring-theme-accent px-3">
         <span className="block uppercase tracking-wide font-bold text-gray-500 text-xs mt-2">
           {label}
         </span>
@@ -34,4 +34,4 @@ const InputComponent = (
   );
 };
 
-export default forwardRef(InputComponent);
+export default forwardRef(TextInputComponent);
