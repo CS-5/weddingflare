@@ -2,8 +2,7 @@ import { FunctionComponent, useState } from "react";
 import { RSVP } from "../../../types";
 import { useForm } from "react-hook-form";
 import TextInput from "../input/TextInput";
-import site from "../../../site.json";
-import RadioButtonInput from "../input/RadioButtonInput";
+import BooleanInput from "../input/BooleanInput";
 
 /*
 
@@ -64,24 +63,12 @@ As a reminder, the wedding is taking place at ${EVENT_LOCATION.address} (Google 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start mb-4 text-gray-700 text-base">
           <TextInput label="First Name" {...register("fName")} required />
           <TextInput label="Last Name" {...register("lName")} required />
-          <label className="flex flex-col bg-gray-200 rounded-xl px-3">
-            <span className="block uppercase tracking-wide font-bold text-gray-500 text-xs mt-2">
-              I will...
-            </span>
-            <div className="flex">
-              <RadioButtonInput
-                label="Be Attending"
-                {...register("attending")}
-                checked
-                required
-              />
-              <RadioButtonInput
-                label="Not be attending"
-                {...register("attending")}
-                required
-              />
-            </div>
-          </label>
+          <BooleanInput
+            label="I will be..."
+            choices={{ trueLabel: "Attending", falseLabel: "Not Attending" }}
+            {...register("attending")}
+            required
+          />
 
           <TextInput
             label="# Attending"

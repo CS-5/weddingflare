@@ -20,7 +20,7 @@ const TextInputComponent = (
           {label}
         </span>
         <input
-          className="my-2 p-0 appearance-none text-black block w-full bg-transparent border-none outline-none focus:ring-transparent"
+          className="my-2 p-0 form-input appearance-none text-black block w-full bg-transparent border-none outline-none focus:ring-transparent"
           ref={ref}
           {...props}
         />
