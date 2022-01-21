@@ -27,5 +27,6 @@ module.exports = {
       strategy: "class",
     }),
     require("tailwindcss-textshadow"),
+    require("@tailwindcss/typography"),
   ],
 };

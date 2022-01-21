@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import RSVPSection from "./components/sections/RSVP";
-import ScheduleSection from "./components/sections/Schedule";
+import RSVP from "./components/sections/RSVP";
+import Schedule from "./components/sections/Schedule";
 import Section from "./components/Section";
-import AboutSection from "./components/sections/About";
+import Markdown from "./components/sections/Markdown";
 
 import site from "../site.json";
 
@@ -81,13 +81,13 @@ export default function Index(): ReactNode {
 
           <div className="relative z-10">
             <Section name="RSVP" className="pt-8">
-              <RSVPSection />
+              <RSVP />
             </Section>
-            <Section name="About" className="pt-8">
-              <AboutSection />
+            <Section name="Information" className="pt-8">
+              <Markdown />
             </Section>
             <Section name="Schedule" className="pt-8">
-              <ScheduleSection />
+              <Schedule />
             </Section>
             <Section
               name="Location"
@@ -105,35 +105,37 @@ export default function Index(): ReactNode {
           </div>
 
           {/* Background Graphics */}
-          <div className="hidden absolute top-0 left-0 w-full h-96 opacity-60">
-            <Image
-              src={topFlower}
-              layout="fill"
-              objectFit="contain"
-              objectPosition="top"
-              className="rounded-t-[3rem]"
-              priority={true}
-              alt=""
-            />
-          </div>
-          <div className="absolute bottom-0 left-0 w-full md:h-96 opacity-60">
-            <Image
-              src={bottomFlower}
-              layout="fill"
-              objectFit="contain"
-              objectPosition="bottom"
-              className="md:rounded-[3rem]"
-              alt=""
-            />
-          </div>
-          <div className="absolute top-1/3 left-0 w-full md:h-[30rem] opacity-60">
-            <Image
-              src={middleFlower}
-              layout="fill"
-              objectFit="contain"
-              objectPosition="middle"
-              alt=""
-            />
+          <div>
+            <div className="absolute top-0 left-0 w-full h-96 opacity-60">
+              <Image
+                src={topFlower}
+                layout="fill"
+                objectFit="contain"
+                objectPosition="top"
+                className="rounded-t-[3rem]"
+                priority={true}
+                alt=""
+              />
+            </div>
+            <div className="absolute bottom-0 left-0 w-full md:h-96 opacity-60">
+              <Image
+                src={bottomFlower}
+                layout="fill"
+                objectFit="contain"
+                objectPosition="bottom"
+                className="md:rounded-[3rem]"
+                alt=""
+              />
+            </div>
+            <div className="absolute top-1/3 left-0 w-full md:h-[30rem] opacity-60">
+              <Image
+                src={middleFlower}
+                layout="fill"
+                objectFit="contain"
+                objectPosition="middle"
+                alt=""
+              />
+            </div>
           </div>
         </main>
 
