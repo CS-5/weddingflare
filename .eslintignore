@@ -1,6 +1,6 @@
 node_modules
 dist
 transpiled
-worker
+functions
 tailwind.config.js
 postcss.config.js
