@@ -1,8 +1,8 @@
 import { FunctionComponent, useState } from "react";
 import { RSVP } from "../../../types";
 import { useForm } from "react-hook-form";
-import TextInput from "../input/TextInput";
-import BooleanInput from "../input/BooleanInput";
+import TextInput from "../input/Text";
+import BooleanInput from "../input/Boolean";
 
 /*
 
@@ -17,34 +17,12 @@ const RSVPSection: FunctionComponent = () => {
   const onSubmit = handleSubmit(async (data) => {
     setSubmitting(true);
 
-    const payload: RSVP = {
-      ...data,
-      number: data.number,
-    };
-
-    // Set message if email was recorded in the form and if EMAIL_FROM was configured at build time
-    /*
-    if (site.secrets && data.email) {
-      payload.message = {
-        from: {
-          name: SITE_TITLE,
-          email: EMAIL_FROM,
-        },
-        subject: "C&T Wedding RSVP Confirmation!",
-        body: `Hi ${data.fName}, 
-        
-Thanks for your RSVP! We are looking forward to having you join us!
-
-As a reminder, the wedding is taking place at ${EVENT_LOCATION.address} (Google Maps driving directions: ${EVENT_LOCATION.url}). It will be held on ${EVENT_LOCAL_DATE} at ${EVENT_LOCAL_TIME}.`,
-      };
-    }*/
-
     const res = await fetch("/api/rsvp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(data),
     }).catch((error) => {
       console.error(error);
     });
@@ -65,11 +43,13 @@ As a reminder, the wedding is taking place at ${EVENT_LOCATION.address} (Google 
           <TextInput label="Last Name" {...register("lName")} required />
           <BooleanInput
             label="I will be..."
-            choices={{ trueLabel: "Attending", falseLabel: "Not Attending" }}
+            choices={{
+              trueLabel: "I will be there",
+              falseLabel: "I will not be there",
+            }}
             {...register("attending")}
             required
           />
-
           <TextInput
             label="# Attending"
             {...register("number")}

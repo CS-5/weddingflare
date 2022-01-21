@@ -3,8 +3,7 @@ export interface RSVP {
   fName: string;
   lName: string;
   number: number;
-  email?: string;
-  message?: Message;
+  attending: boolean;
 }
 
 export interface Message {
