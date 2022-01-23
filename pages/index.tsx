@@ -1,18 +1,11 @@
 import { ReactNode } from "react";
 import Head from "next/head";
-import Image from "next/image";
-import RSVP from "./components/sections/RSVP";
-import Schedule from "./components/sections/Schedule";
-import Section from "./components/Section";
-import Markdown from "./components/sections/Markdown";
+import RSVP from "../components/sections/RSVP";
+import Schedule from "../components/sections/Schedule";
+import Section from "../components/Section";
+import Markdown from "../components/sections/Markdown";
 
 import site from "../site.json";
-
-// Images
-import background from "../public/image/background2.jpg";
-import topFlower from "../public/image/flowers/top.png";
-import bottomFlower from "../public/image/flowers/bottom.png";
-import middleFlower from "../public/image/flowers/middle.png";
 
 export default function Index(): ReactNode {
   return (
@@ -26,13 +19,7 @@ export default function Index(): ReactNode {
       <div className="overflow-auto">
         {/* Background Image */}
         <div className="fixed h-full w-full -z-1">
-          <Image
-            src={background}
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            priority={true}
-          />
+          <img src="/image/background2.jpg" alt="" className="object-cover" />
         </div>
 
         {/* Header */}
@@ -47,7 +34,7 @@ export default function Index(): ReactNode {
             <span className="block md:hidden">&mdash;</span>
             <span className="block md:inline-block">
               {new Date(
-                `${site.event.date} ${site.event.time}`,
+                `${site.event.date} ${site.event.time}`
               ).toLocaleDateString("en-US", {
                 timeZone: site.event.timezone,
                 month: "long",
@@ -107,34 +94,21 @@ export default function Index(): ReactNode {
           {/* Background Graphics */}
           <div>
             <div className="absolute top-0 left-0 w-full h-96 opacity-60">
-              <Image
-                src={topFlower}
-                layout="fill"
-                objectFit="contain"
-                objectPosition="top"
+              <img
+                src="/image/flowers/top.png"
                 className="rounded-t-[3rem]"
-                priority={true}
                 alt=""
               />
             </div>
-            <div className="absolute bottom-0 left-0 w-full md:h-96 opacity-60">
-              <Image
-                src={bottomFlower}
-                layout="fill"
-                objectFit="contain"
-                objectPosition="bottom"
+            <div className="absolute bottom-0 left-0 w-full opacity-60">
+              <img
+                src="/image/flowers/bottom.png"
                 className="md:rounded-[3rem]"
                 alt=""
               />
             </div>
             <div className="absolute top-1/3 left-0 w-full md:h-[30rem] opacity-60">
-              <Image
-                src={middleFlower}
-                layout="fill"
-                objectFit="contain"
-                objectPosition="middle"
-                alt=""
-              />
+              <img src="/image/flowers/middle.png" alt="" />
             </div>
           </div>
         </main>
