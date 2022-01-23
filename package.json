@@ -4,14 +4,16 @@
   "private": true,
   "author": "CS-5",
   "license": "MIT",
+  "browser": {
+    "fs": false
+  },
   "scripts": {
+    "dev": "npm run wrangler:dev",
     "next:dev": "next dev",
     "next:build": "next build",
     "next:export": "next export",
     "next:start": "next start",
-    "next:lint": "next lint",
-    "wrangler:dev": "wrangler pages dev ./out -- next:dev",
-    "dev": "wrangler:dev"
+    "next:lint": "next lint"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.3.1",
@@ -33,6 +35,7 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.7.0",
+    "csv-writer": "^1.6.0",
     "next": "^12.0.8",
     "react": "17.0.2",
     "react-dom": "17.0.2",
