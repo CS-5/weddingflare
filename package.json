@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "npm run wrangler:dev",
+    "build": "npm run next:build && npm run next:export",
     "next:dev": "next dev",
     "next:build": "next build",
     "next:export": "next export",
