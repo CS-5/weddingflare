@@ -19,18 +19,22 @@ export default function Index(): ReactNode {
       <div className="overflow-auto">
         {/* Background Image */}
         <div className="fixed h-full w-full -z-1">
-          <img src="/image/background2.jpg" alt="" className="object-cover" />
+          <img
+            src="/image/background2.jpg"
+            alt=""
+            className="absolute object-cover h-full w-full top-0 bottom-0 m-auto"
+          />
         </div>
 
         {/* Header */}
-        <header className="z-0 fixed left-2/4 -translate-x-1/2 text-center pt-20 md:pt-28 w-full md:w-10/12">
+        <header className="z-0 fixed left-2/4 -translate-x-1/2 text-center pt-6 md:pt-28 w-full md:w-10/12">
           <h1 className="font-cursive text-6xl md:text-8xl text-theme-primary text-shadow-l">
             <span className="block md:inline-block">
               <span className="text-9xl">C</span>arson &{" "}
               <span className="text-9xl tracking-[-0.2em]">T</span>atianna
             </span>
           </h1>
-          <h2 className="mt-2 font-serif text-2xl md:text-3xl text-white">
+          <h2 className="mt-[-1rem] md:mt-8 font-serif text-2xl md:text-3xl text-white">
             <span className="block md:hidden">&mdash;</span>
             <span className="block md:inline-block">
               {new Date(
@@ -103,7 +107,7 @@ export default function Index(): ReactNode {
             <div className="absolute bottom-0 left-0 w-full opacity-60">
               <img
                 src="/image/flowers/bottom.png"
-                className="md:rounded-[3rem]"
+                className="hidden md:block md:rounded-[3rem]"
                 alt=""
               />
             </div>
