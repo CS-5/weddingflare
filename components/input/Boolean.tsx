@@ -5,7 +5,6 @@ interface BooleanInputProps
     React.InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
   > {
-  label: string;
   choices: {
     trueLabel: string;
     falseLabel: string;
@@ -13,14 +12,11 @@ interface BooleanInputProps
 }
 
 const BooleanInput = (
-  { label, choices, ...props }: BooleanInputProps,
-  ref: Ref<HTMLInputElement>,
+  { choices, ...props }: BooleanInputProps,
+  ref: Ref<HTMLInputElement>
 ) => {
   return (
     <div className="grid grid-cols-2 bg-gray-200 rounded-xl overflow-hidden h-16 uppercase font-bold text-gray-500 text-xs">
-      {/*<div className="col-span-2 mx-auto mt-2 uppercase tracking-wide font-bold text-gray-500 text-xs">
-        {label}
-  </div> */}
       <BooleanChoice
         id="trueRadio"
         label={choices.trueLabel}

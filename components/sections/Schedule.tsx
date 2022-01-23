@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import site from "../../../site.json";
+import site from "../../site.json";
 
 /*
 

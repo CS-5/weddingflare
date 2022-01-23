@@ -1,5 +1,5 @@
 import { FunctionComponent, useState } from "react";
-import { RSVP } from "../../../types";
+import type { RSVP } from "../../types";
 import { useForm } from "react-hook-form";
 import TextInput from "../input/Text";
 import BooleanInput from "../input/Boolean";
@@ -42,7 +42,6 @@ const RSVPSection: FunctionComponent = () => {
           <TextInput label="First Name" {...register("fName")} required />
           <TextInput label="Last Name" {...register("lName")} required />
           <BooleanInput
-            label="I will be..."
             choices={{
               trueLabel: "I will be there",
               falseLabel: "I will not be there",
