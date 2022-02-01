@@ -102,17 +102,19 @@ export default function Index(): ReactNode {
                 src="/image/flowers/top.webp"
                 className="rounded-t-[3rem]"
                 alt=""
+                width="1428" height="635"
               />
+            </div>
+            <div className="absolute top-1/3 left-0 w-full md:h-[30rem] opacity-60">
+              <img src="/image/flowers/middle.webp" alt="" width="1428" height="777" />
             </div>
             <div className="absolute bottom-0 left-0 w-full opacity-60">
               <img
                 src="/image/flowers/bottom.webp"
                 className="hidden md:block md:rounded-[3rem]"
                 alt=""
+                width="1428" height="579"
               />
-            </div>
-            <div className="absolute top-1/3 left-0 w-full md:h-[30rem] opacity-60">
-              <img src="/image/flowers/middle.webp" alt="" />
             </div>
           </div>
         </main>
