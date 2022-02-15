@@ -56,55 +56,59 @@ export const onRequestPost: PagesFunction<{
   );
 };
 
-export const onRequestGet: PagesFunction<{
-  WF_RSVP_RESPONSES: KVNamespace;
-}> = async ({ request, env }) => {
-  const csvWriter = createObjectCsvStringifier({
-    header: [
-      { id: "id", title: "ID" },
-      { id: "fName", title: "First Name" },
-      { id: "lName", title: "Last Name" },
-      { id: "attending", title: "Attending Y/N" },
-      { id: "number", title: "Attending #" },
-    ],
-  });
-
-  const records: {
-    id: string;
-    fName: string;
-    lName: string;
-    attending: boolean;
-    number: number;
-  }[] = [];
-
-  const keys = await env.WF_RSVP_RESPONSES.list();
-
-  for (const key of keys.keys) {
-    const rsvp = await env.WF_RSVP_RESPONSES.get<RSVP>(key.name, "json");
-    if (rsvp) {
-      records.push({
-        id: rsvp.id ?? "00000000-0000-0000-0000-000000000000",
-        fName: rsvp.fName,
-        lName: rsvp.lName,
-        attending: rsvp.attending,
-        number: rsvp.number,
-      });
-    }
-  }
-
-  if (records) {
-    return new Response(
-      `${csvWriter.getHeaderString()}${csvWriter.stringifyRecords(records)}`
-    );
-  }
-  return response(
-    {
-      success: false,
-      message: "No records found",
-    },
-    404
-  );
-};
+// BUG: This handler is broken until further notice
+//      csvWriter requires the filesystem, which is not 
+//      available in the workers runtime
+//
+// export const onRequestGet: PagesFunction<{
+//   WF_RSVP_RESPONSES: KVNamespace;
+// }> = async ({ request, env }) => {
+//   const csvWriter = createObjectCsvStringifier({
+//     header: [
+//       { id: "id", title: "ID" },
+//       { id: "fName", title: "First Name" },
+//       { id: "lName", title: "Last Name" },
+//       { id: "attending", title: "Attending Y/N" },
+//       { id: "number", title: "Attending #" },
+//     ],
+//   });
+// 
+//   const records: {
+//     id: string;
+//     fName: string;
+//     lName: string;
+//     attending: boolean;
+//     number: number;
+//   }[] = [];
+// 
+//   const keys = await env.WF_RSVP_RESPONSES.list();
+// 
+//   for (const key of keys.keys) {
+//     const rsvp = await env.WF_RSVP_RESPONSES.get<RSVP>(key.name, "json");
+//     if (rsvp) {
+//       records.push({
+//         id: rsvp.id ?? "00000000-0000-0000-0000-000000000000",
+//         fName: rsvp.fName,
+//         lName: rsvp.lName,
+//         attending: rsvp.attending,
+//         number: rsvp.number,
+//       });
+//     }
+//   }
+// 
+//   if (records) {
+//     return new Response(
+//       `${csvWriter.getHeaderString()}${csvWriter.stringifyRecords(records)}`
+//     );
+//   }
+//   return response(
+//     {
+//       success: false,
+//       message: "No records found",
+//     },
+//     404
+//   );
+// };
 
 /**
  * Adds a new RSVP to the KV store
