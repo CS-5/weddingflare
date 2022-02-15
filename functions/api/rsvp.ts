@@ -4,6 +4,7 @@ import { createObjectCsvStringifier } from "csv-writer";
 
 export const onRequestPost: PagesFunction<{
   WF_RSVP_RESPONSES: KVNamespace;
+  WF_SHEETS_ENDPOINT: string;
 }> = async ({ request, env }) => {
   const rsvp: RSVP = await request.json();
 
@@ -24,6 +25,10 @@ export const onRequestPost: PagesFunction<{
     // TODO: After converting this project to CF Pages Functions, this check may not be required
     if (typeof env.WF_RSVP_RESPONSES !== "undefined")
       await addKVRSVP(env.WF_RSVP_RESPONSES, rsvp);
+
+    // RSVP > Google Sheets
+    if (env.WF_SHEETS_ENDPOINT)
+      await addSheetRSVP(env.WF_SHEETS_ENDPOINT, rsvp);
 
     return response(
       { success: true, message: "RSVP Successful", result: rsvp },
@@ -103,13 +108,33 @@ export const onRequestGet: PagesFunction<{
 
 /**
  * Adds a new RSVP to the KV store
- * @param store the KVNamespace to add the RSVP to
+ * @param store The KVNamespace to add the RSVP to
  * @param rsvp The RSVP object to add to the KV store
  * @returns A promise that resolves when the RSVP is added to the KV store
  */
 const addKVRSVP = async (store: KVNamespace, rsvp: RSVP): Promise<void> => {
   if (!rsvp.id) return;
   return await store.put(rsvp.id, JSON.stringify(rsvp));
+};
+
+/**
+ * Adds a new RSVP to the Google Sheet. GAS boilerplate can be found
+ * here: https://gist.github.com/CS-5/5db243cb25c26c903d2921ec68e66583
+ * @param endpoint The Google AppsScript web API endpoint
+ * @param rsvp The RSVP object to add to the Google Sheet
+ * @returns A promise that resolves when the RSVP is added to the Google Sheet
+ */
+const addSheetRSVP = async (
+  endpoint: string,
+  rsvp: RSVP
+): Promise<Response> => {
+  return await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(rsvp),
+  });
 };
 
 /**
