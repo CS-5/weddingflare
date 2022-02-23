@@ -1,9 +1,12 @@
 import { FunctionComponent } from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 
-const MarkdownSection: FunctionComponent = () => {
-  return <div></div>; //<ReactMarkdown remarkPlugins={[remarkGfm]}></ReactMarkdown>;
+interface Props {
+  source: MDXRemoteSerializeResult;
+}
+
+const MarkdownSection: FunctionComponent<Props> = ({ source }) => {
+  return <MDXRemote {...source} />;
 };
 
 export default MarkdownSection;
