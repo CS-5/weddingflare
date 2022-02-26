@@ -3,8 +3,6 @@ import Head from "next/head";
 import RSVP from "../components/sections/RSVP";
 import Schedule from "../components/sections/Schedule";
 import Section from "../components/Section";
-import { MDXRemote } from "next-mdx-remote";
-import { serialize } from 'next-mdx-remote/serialize'
 
 import site from "../site.json";
 

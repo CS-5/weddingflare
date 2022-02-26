@@ -1,6 +1,5 @@
 import { v4 as uuid } from "uuid";
 import type { RSVP, APIResponse } from "../../types";
-import { createObjectCsvStringifier } from "csv-writer";
 
 export const onRequestPost: PagesFunction<{
   WF_RSVP_RESPONSES: KVNamespace;

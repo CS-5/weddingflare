@@ -4,9 +4,6 @@
   "private": true,
   "author": "CS-5",
   "license": "MIT",
-  "browser": {
-    "fs": false
-  },
   "scripts": {
     "dev": "npm run wrangler:dev",
     "build": "npm run next:build && npm run next:export",
@@ -38,15 +35,12 @@
   },
   "dependencies": {
     "@react-google-maps/api": "^2.7.0",
-    "csv-writer": "^1.6.0",
     "next": "^12.1.0",
-    "next-mdx-remote": "^4.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-hook-form": "^7.27.1",
     "react-markdown": "^8.0.0",
     "react-query": "^3.34.16",
-    "remark-gfm": "^3.0.1",
     "uuid": "^8.3.2"
   },
   "eslintConfig": {
