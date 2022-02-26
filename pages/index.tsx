@@ -3,7 +3,8 @@ import Head from "next/head";
 import RSVP from "../components/sections/RSVP";
 import Schedule from "../components/sections/Schedule";
 import Section from "../components/Section";
-import Markdown from "../components/sections/Markdown";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from 'next-mdx-remote/serialize'
 
 import site from "../site.json";
 
@@ -75,7 +76,7 @@ export default function Index(): ReactNode {
               <RSVP />
             </Section>
             <Section name="Information" className="pt-8">
-              <Markdown />
+              {/* <MDXRemote /> */}
             </Section>
             <Section name="Schedule" className="pt-8">
               <Schedule />

@@ -1,40 +1,41 @@
-import { DetailedHTMLProps, forwardRef, Ref } from "react";
+import { DetailedHTMLProps, forwardRef } from "react";
+import { useFormContext } from "react-hook-form";
 
-interface BooleanInputProps
-  extends DetailedHTMLProps<
-    React.InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
+interface BooleanInputProps {
   choices: {
     trueLabel: string;
     falseLabel: string;
   };
+  name: string;
+  required?: boolean;
 }
 
-const BooleanInput = (
-  { choices, ...props }: BooleanInputProps,
-  ref: Ref<HTMLInputElement>
-) => {
+export const BooleanInput = ({
+  choices,
+  name,
+  required,
+}: BooleanInputProps) => {
+  const { register } = useFormContext();
+
   return (
     <div className="grid grid-cols-2 bg-gray-200 rounded-xl overflow-hidden h-16 uppercase font-bold text-gray-500 text-xs">
       <BooleanChoice
         id="trueRadio"
         label={choices.trueLabel}
-        ref={ref}
-        {...props}
-        checked
+        required={required}
+        {...register(name)}
+        value="true"
       />
       <BooleanChoice
         id="falseRadio"
+        required={required}
         label={choices.falseLabel}
-        ref={ref}
-        {...props}
+        {...register(name)}
+        value="false"
       />
     </div>
   );
 };
-
-export default forwardRef(BooleanInput);
 
 interface BooleanChoiceProps
   extends DetailedHTMLProps<
@@ -43,27 +44,24 @@ interface BooleanChoiceProps
   > {
   label: string;
   id: string;
-  checked?: boolean;
+  value?: string;
 }
 
-const BooleanChoice = ({
-  label,
-  id,
-  checked,
-  ...props
-}: BooleanChoiceProps) => {
-  return (
-    <>
-      <input
-        id={id}
-        className="form-radio hidden"
-        type="radio"
-        {...props}
-        checked={checked}
-      />
-      <label htmlFor={id} className="h-full w-full py-2 px-6">
-        <span className="block text-center my-2 mx-auto">{label}</span>
-      </label>
-    </>
-  );
-};
+const BooleanChoice = forwardRef<HTMLInputElement, BooleanChoiceProps>(
+  function BooleanChoice({ label, id, ...props }, ref) {
+    return (
+      <>
+        <input
+          id={id}
+          className="form-radio hidden"
+          type="radio"
+          ref={ref}
+          {...props}
+        />
+        <label htmlFor={id} className="h-full w-full py-2 px-6">
+          <span className="block text-center my-2 mx-auto">{label}</span>
+        </label>
+      </>
+    );
+  }
+);
