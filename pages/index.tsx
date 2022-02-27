@@ -131,7 +131,7 @@ export default function Index(): ReactNode {
             Made with ❤️ by{" "}
             <a
               className="transition duration-300 ease-in-out text-theme-accent hover:text-theme-primary"
-              href="https://github.com/CS-5/eventflare"
+              href="https://github.com/CS-5/weddingflare/"
             >
               Carson
             </a>
