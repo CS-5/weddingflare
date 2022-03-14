@@ -4,9 +4,6 @@
   "private": true,
   "author": "CS-5",
   "license": "MIT",
-  "browser": {
-    "fs": false
-  },
   "scripts": {
     "dev": "npm run wrangler:dev",
     "build": "npm run next:build && npm run next:export",
