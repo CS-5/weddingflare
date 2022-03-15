@@ -74,10 +74,43 @@ export default function Index(): ReactNode {
               <RSVP />
             </Section>
             <Section name="Information" className="pt-8">
-              <></>
+              <h1></h1>
             </Section>
             <Section name="Schedule" className="pt-8">
               <Schedule schedule={site.event.schedule} />
+            </Section>
+            <Section name="Registry" className="pt-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <h1 className="md:col-span-2 text-center pb-4 font-semibold">
+                  We are using Amazon and Target to handle our wedding registry.
+                  Click the images below to be taken to their respective
+                  websites. There will also be a jar for a honeymoon fund at the
+                  wedding.
+                </h1>
+                <a
+                  href="
+                  https://smile.amazon.com/wedding/share/carsonandtatianna"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="/image/amazon.webp"
+                    alt="Amazon"
+                    className="h-16 m-auto"
+                  />
+                </a>
+                <a
+                  href="https://www.target.com/gift-registry/gift/carsonandtatianna"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    src="/image/target.webp"
+                    alt="Target"
+                    className="h-16 mx-auto md:-mt-2"
+                  />
+                </a>
+              </div>
             </Section>
             <Section
               name="Location"
