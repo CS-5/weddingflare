@@ -74,19 +74,36 @@ export default function Index(): ReactNode {
               <RSVP />
             </Section>
             <Section name="Information" className="pt-8">
-              <h1></h1>
+              <p className="pb-4">
+                <h2 className="pb-2 text-theme-accent text-xl font-bold">
+                  Dress Code
+                </h2>
+                Here is some info about the dress code
+              </p>
+              <p className="pb-4">
+                <h2 className="pb-2 text-theme-accent text-xl font-bold">
+                  Other thing
+                </h2>
+                Words
+              </p>
+              <p className="pb-4">
+                <h2 className="pb-2 text-theme-accent text-xl font-bold">
+                  Yet another thing
+                </h2>
+                Words
+              </p>
             </Section>
             <Section name="Schedule" className="pt-8">
               <Schedule schedule={site.event.schedule} />
             </Section>
             <Section name="Registry" className="pt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <h1 className="md:col-span-2 text-center pb-4 font-semibold">
+                <div className="md:col-span-2 text-center pb-4 font-semibold">
                   We are using Amazon and Target to handle our wedding registry.
                   Click the images below to be taken to their respective
                   websites. There will also be a jar for a honeymoon fund at the
                   wedding.
-                </h1>
+                </div>
                 <a
                   href="
                   https://smile.amazon.com/wedding/share/carsonandtatianna"

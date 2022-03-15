@@ -14,9 +14,9 @@ const Section: FunctionComponent<Props> = ({
   className,
 }) => {
   const header = (
-    <h3 className="pb-4 text-theme-primary text-3xl font-serif font-bold text-center">
+    <h1 className="pb-4 text-theme-primary text-3xl font-serif font-bold text-center">
       {name}
-    </h3>
+    </h1>
   );
 
   return (
