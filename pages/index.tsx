@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Head from "next/head";
+import Script from "next/script";
 import RSVP from "../components/sections/RSVP";
 import Schedule from "../components/sections/Schedule";
 import Section from "../components/Section";
@@ -14,6 +15,24 @@ export default function Index(): ReactNode {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="robots" content="noindex" />
       </Head>
+
+      <Script
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        strategy="worker"
+        data-cf-beacon='{"token": "5d9623f456704b5d8f9894ae832dec76"}'
+      />
+
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-NT1ZXWS6JB"
+        strategy="worker"
+        async
+      />
+      <Script id="gtag" strategy="worker">
+        {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NT1ZXWS6JB');`}
+      </Script>
 
       <div className="overflow-auto">
         {/* Background Image */}
