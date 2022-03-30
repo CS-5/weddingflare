@@ -25,8 +25,8 @@ export default function Index(): ReactNode {
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-NT1ZXWS6JB"
         strategy="worker"
-        async
       />
+
       <Script id="gtag" strategy="worker">
         {`window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
