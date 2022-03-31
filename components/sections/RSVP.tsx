@@ -1,4 +1,4 @@
-import { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import type { RSVP } from "../../types";
 import { FormProvider, useForm } from "react-hook-form";
 import TextInput from "../input/Text";
@@ -12,7 +12,7 @@ This section is a RSVP form.
 
 const RSVPSection: FunctionComponent = () => {
   const formValues = useForm<RSVP>();
-  const { register, handleSubmit, reset } = formValues;
+  const { register, handleSubmit, reset, watch } = formValues;
   const [submitting, setSubmitting] = useState(false);
 
   const onSubmit = handleSubmit(async (data) => {
@@ -56,6 +56,7 @@ const RSVPSection: FunctionComponent = () => {
               {...register("number")}
               min="1"
               type="number"
+              disabled={!watch("attending", false)}
               required
             />
           </div>
