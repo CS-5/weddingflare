@@ -41,6 +41,7 @@ export default function Index(): ReactNode {
             src="/image/background.webp"
             alt=""
             className="absolute object-cover h-full w-full top-0 bottom-0 m-auto"
+            style={{ imageRendering: "-webkit-optimize-contrast" }}
           />
         </div>
 
@@ -93,24 +94,18 @@ export default function Index(): ReactNode {
               <RSVP />
             </Section>
             <Section name="Information" className="pt-8">
-              <p className="pb-4">
-                <h2 className="pb-2 text-theme-accent text-xl font-bold">
-                  Dress Code
-                </h2>
-                Here is some info about the dress code
-              </p>
-              <p className="pb-4">
-                <h2 className="pb-2 text-theme-accent text-xl font-bold">
-                  Other thing
-                </h2>
-                Words
-              </p>
-              <p className="pb-4">
-                <h2 className="pb-2 text-theme-accent text-xl font-bold">
-                  Yet another thing
-                </h2>
-                Words
-              </p>
+              <h2 className=" text-theme-accent text-xl font-bold">
+                Dress Code
+              </h2>
+              <p className="pb-4">Here is some info about the dress code</p>
+              <h2 className=" text-theme-accent text-xl font-bold">
+                Other thing
+              </h2>
+              <p className="pb-4">Words</p>
+              <h2 className="text-theme-accent text-xl font-bold">
+                Yet another thing
+              </h2>
+              <p className="pb-4">Words</p>
             </Section>
             <Section name="Schedule" className="pt-8">
               <Schedule schedule={site.event.schedule} />
@@ -133,6 +128,7 @@ export default function Index(): ReactNode {
                     src="/image/amazon.webp"
                     alt="Amazon"
                     className="h-16 m-auto"
+                    style={{ imageRendering: "-webkit-optimize-contrast" }}
                   />
                 </a>
                 <a
@@ -144,6 +140,7 @@ export default function Index(): ReactNode {
                     src="/image/target.webp"
                     alt="Target"
                     className="h-16 mx-auto md:-mt-2"
+                    style={{ imageRendering: "-webkit-optimize-contrast" }}
                   />
                 </a>
               </div>
@@ -169,6 +166,7 @@ export default function Index(): ReactNode {
               <img
                 src="/image/flowers/top.webp"
                 className="rounded-t-[3rem]"
+                style={{ imageRendering: "-webkit-optimize-contrast" }}
                 alt=""
                 width="1428"
                 height="635"
@@ -177,6 +175,7 @@ export default function Index(): ReactNode {
             <div className="absolute top-1/3 left-0 w-full md:h-[30rem] opacity-60">
               <img
                 src="/image/flowers/middle.webp"
+                style={{ imageRendering: "-webkit-optimize-contrast" }}
                 alt=""
                 width="1428"
                 height="777"
@@ -186,6 +185,7 @@ export default function Index(): ReactNode {
               <img
                 src="/image/flowers/bottom.webp"
                 className="hidden md:block md:rounded-[3rem]"
+                style={{ imageRendering: "-webkit-optimize-contrast" }}
                 alt=""
                 width="1428"
                 height="579"
