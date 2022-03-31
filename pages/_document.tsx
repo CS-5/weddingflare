@@ -9,7 +9,7 @@ import Document, {
 
 class MyDocument extends Document {
   static async getInitialProps(
-    ctx: DocumentContext,
+    ctx: DocumentContext
   ): Promise<DocumentInitialProps> {
     return await Document.getInitialProps(ctx);
   }
@@ -18,11 +18,25 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="preconnect" href="https://fonts.gstatic.com/" />
-          <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
           <link
             href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Frank+Ruhl+Libre:wght@400;700&display=swap"
             rel="stylesheet"
+          />
+          <script
+            data-partytown-config
+            dangerouslySetInnerHTML={{
+              __html: `
+                partytown = {
+                  lib: "/_next/static/~partytown/",
+                  forward: ["gtag"]           
+                };`,
+            }}
           />
         </Head>
         <body>
