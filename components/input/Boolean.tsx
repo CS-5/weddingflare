@@ -49,18 +49,18 @@ interface BooleanChoiceProps
 const BooleanChoice = forwardRef<HTMLInputElement, BooleanChoiceProps>(
   function BooleanChoice({ label, id, ...props }, ref) {
     return (
-      <>
+      <div className="relative">
         <input
           id={id}
-          className="form-radio hidden"
+          className="form-radio -z-10 absolute"
           type="radio"
           ref={ref}
           {...props}
         />
-        <label htmlFor={id} className="h-full w-full py-2 px-6">
+        <label htmlFor={id} className="h-full w-full py-2 px-6 block">
           <span className="block text-center my-2 mx-auto">{label}</span>
         </label>
-      </>
+      </div>
     );
   }
 );
