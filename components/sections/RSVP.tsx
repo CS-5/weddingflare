@@ -59,7 +59,16 @@ const RSVPSection: FunctionComponent = () => {
               disabled={watch("attending", "no") === "no"}
             />
           </div>
-          <div className="flex justify-end">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+            <p className="md:col-span-2 md:col-end-4 md:my-auto leading-tight text-xs text-center">
+              Need to update your RSVP or form broke? Email:{" "}
+              <a
+                className="transition duration-300 ease-in-out text-theme-accent hover:text-theme-primary"
+                href="mailto:rsvp@carsonandtatianna.com"
+              >
+                rsvp@carsonandtatianna.com
+              </a>
+            </p>
             <button
               className="w-full md:w-auto text-white transition duration-200 ease-in-out bg-theme-accent hover:bg-theme-primary shadow drop-shadow-lg py-2 px-6 rounded-2xl"
               type="submit"
