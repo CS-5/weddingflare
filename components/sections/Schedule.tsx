@@ -1,11 +1,5 @@
 import { FunctionComponent } from "react";
 
-/*
-
-This section is a table of times/dates and details, set in constants.ts
-
-*/
-
 interface Props {
   schedule: {
     time: string;

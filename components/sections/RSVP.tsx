@@ -4,12 +4,6 @@ import { FormProvider, useForm } from "react-hook-form";
 import TextInput from "../input/Text";
 import { BooleanInput } from "../input/Boolean";
 
-/*
-
-This section is a RSVP form.
-
-*/
-
 const RSVPSection: FunctionComponent = () => {
   const formValues = useForm<RSVP>();
   const { register, handleSubmit, reset, watch } = formValues;
