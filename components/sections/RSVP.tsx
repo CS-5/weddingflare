@@ -44,10 +44,14 @@ const RSVPSection: FunctionComponent = () => {
             <TextInput label="First Name" {...register("fName")} required />
             <TextInput label="Last Name" {...register("lName")} required />
             <BooleanInput
-              choices={{
-                trueLabel: "I will be there",
-                falseLabel: "I will not be there",
-              }}
+              choices={
+                {
+                  yes: "I will be there",
+                  no: "I will not be there",
+                } as {
+                  [option in RSVP["attending"]]: string;
+                }
+              }
               name="attending"
               required
             />
@@ -56,8 +60,8 @@ const RSVPSection: FunctionComponent = () => {
               {...register("number")}
               min="1"
               type="number"
-              disabled={!watch("attending", false)}
-              required
+              required={watch("attending") === "yes"}
+              disabled={watch("attending") === "no"}
             />
           </div>
           <div className="flex justify-end">

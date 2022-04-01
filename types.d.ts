@@ -3,7 +3,7 @@ export interface RSVP {
   fName: string;
   lName: string;
   number: number;
-  attending: boolean;
+  attending: "yes" | "no";
 }
 
 export interface APIResponse {

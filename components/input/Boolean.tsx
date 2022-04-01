@@ -1,38 +1,37 @@
 import { DetailedHTMLProps, forwardRef } from "react";
 import { useFormContext } from "react-hook-form";
 
-interface BooleanInputProps {
+interface BooleanInputProps<TChoices extends string> {
   choices: {
-    trueLabel: string;
-    falseLabel: string;
+    [value in TChoices]: string;
   };
   name: string;
   required?: boolean;
 }
 
-export const BooleanInput = ({
+export const BooleanInput = <TChoices extends string>({
   choices,
   name,
   required,
-}: BooleanInputProps) => {
+}: BooleanInputProps<TChoices>) => {
   const { register } = useFormContext();
+
+  const options = Object.keys(choices) as TChoices[];
 
   return (
     <div className="grid grid-cols-2 bg-gray-200 rounded-xl overflow-hidden h-16 uppercase font-bold text-gray-500 text-xs">
-      <BooleanChoice
-        id="trueRadio"
-        label={choices.trueLabel}
-        required={required}
-        {...register(name)}
-        value="true"
-      />
-      <BooleanChoice
-        id="falseRadio"
-        required={required}
-        label={choices.falseLabel}
-        {...register(name)}
-        value="false"
-      />
+      {options.map((optionName) => {
+        return (
+          <BooleanChoice
+            id={optionName}
+            key={optionName}
+            label={choices[optionName]}
+            required={required}
+            {...register(name)}
+            value={optionName}
+          />
+        );
+      })}
     </div>
   );
 };
