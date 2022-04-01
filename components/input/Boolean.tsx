@@ -57,8 +57,10 @@ const BooleanChoice = forwardRef<HTMLInputElement, BooleanChoiceProps>(
           ref={ref}
           {...props}
         />
-        <label htmlFor={id} className="h-full w-full py-2 px-6 block">
-          <span className="block text-center my-2 mx-auto">{label}</span>
+        <label htmlFor={id} className="h-full w-full block py-4">
+          <span className="block text-center text-sm md:text-xs md:mx-4">
+            {label}
+          </span>
         </label>
       </div>
     );
