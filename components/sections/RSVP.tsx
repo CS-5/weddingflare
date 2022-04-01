@@ -60,8 +60,9 @@ const RSVPSection: FunctionComponent = () => {
               {...register("number")}
               min="1"
               type="number"
-              required={watch("attending") === "yes"}
-              disabled={watch("attending") === "no"}
+              // TODO: This code is pretty cursed, but hey it works
+              required={watch("attending", "no") === "yes"}
+              disabled={watch("attending", "no") === "no"}
             />
           </div>
           <div className="flex justify-end">
