@@ -183,6 +183,8 @@ export default function Index(): ReactNode {
             <a
               className="transition duration-300 ease-in-out text-theme-accent hover:text-theme-primary"
               href="https://github.com/CS-5/weddingflare/"
+              target="_blank"
+              rel="noreferrer"
             >
               Carson
             </a>
@@ -193,6 +195,8 @@ export default function Index(): ReactNode {
             <a
               className="transition duration-300 ease-in-out text-theme-accent hover:text-theme-primary"
               href="https://workers.cloudflare.com/"
+              target="_blank"
+              rel="noreferrer"
             >
               Workers
             </a>{" "}
@@ -200,6 +204,8 @@ export default function Index(): ReactNode {
             <a
               className="transition duration-300 ease-in-out text-theme-accent hover:text-theme-primary"
               href="https://pages.cloudflare.com/"
+              target="_blank"
+              rel="noreferrer"
             >
               Pages
             </a>
