@@ -125,8 +125,8 @@ export default function Index(): ReactNode {
           </div>
 
           {/* Background Graphics */}
-          <div>
-            <div className="absolute top-0 left-0 w-full h-96 opacity-60">
+          <div className="opacity-40">
+            <div className="absolute top-0 left-0 w-full h-96">
               <img
                 src="/image/flowers/top.webp"
                 className="rounded-t-[3rem]"
@@ -136,7 +136,7 @@ export default function Index(): ReactNode {
                 height="635"
               />
             </div>
-            <div className="absolute top-1/3 left-0 w-full md:h-[30rem] opacity-60">
+            <div className="absolute top-1/3 left-0 w-full md:h-[30rem]">
               <img
                 src="/image/flowers/middle.webp"
                 style={{ imageRendering: "-webkit-optimize-contrast" }}
@@ -145,7 +145,7 @@ export default function Index(): ReactNode {
                 height="777"
               />
             </div>
-            <div className="absolute bottom-0 left-0 w-full opacity-60">
+            <div className="absolute bottom-0 left-0 w-full">
               <img
                 src="/image/flowers/bottom.webp"
                 className="hidden md:block md:rounded-[3rem]"
