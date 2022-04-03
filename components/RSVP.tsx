@@ -1,8 +1,8 @@
 import React, { FunctionComponent, useState } from "react";
-import type { RSVP } from "../../types";
+import type { RSVP } from "../types";
 import { FormProvider, useForm } from "react-hook-form";
-import TextInput from "../input/Text";
-import { BooleanInput } from "../input/Boolean";
+import TextInput from "./input/Text";
+import { BooleanInput } from "./input/Boolean";
 
 const RSVPSection: FunctionComponent = () => {
   const formValues = useForm<RSVP>();

@@ -1,8 +1,6 @@
 import { ReactNode } from "react";
 import Head from "next/head";
-import Script from "next/script";
-import RSVP from "../components/sections/RSVP";
-import Schedule from "../components/sections/Schedule";
+import RSVP from "../components/RSVP";
 import Section from "../components/Section";
 
 import site from "../site.json";
@@ -55,7 +53,7 @@ export default function Index(): ReactNode {
         </header>
 
         {/* Main */}
-        <main className="relative bg-theme-white text-theme-gray rounded-t-[3rem] mx-auto mt-[42rem] md:mt-[48rem] lg:mt-[40rem] md:rounded-[3rem] md:shadow-2xl text-lg leading-8 p-8 md:w-10/12 lg:w-[48rem]">
+        <main className="relative bg-theme-white bg-[url('/image/cardbg.jpg')] text-theme-gray rounded-t-[3rem] mx-auto mt-[42rem] md:mt-[48rem] lg:mt-[40rem] md:rounded-[3rem] md:shadow-2xl text-lg leading-8 p-8 md:w-10/12 lg:w-[48rem]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-12 w-12 text-theme-primary mx-auto animate-bounce"
@@ -88,9 +86,6 @@ export default function Index(): ReactNode {
                 Yet another thing
               </h2>
               <p className="pb-4">Words</p>
-            </Section>
-            <Section name="Schedule" className="pt-8">
-              <Schedule schedule={site.event.schedule} />
             </Section>
             <Section name="Registry" className="pt-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -125,19 +120,6 @@ export default function Index(): ReactNode {
                     style={{ imageRendering: "-webkit-optimize-contrast" }}
                   />
                 </a>
-              </div>
-            </Section>
-            <Section
-              name="Location"
-              url={site.event.location.url}
-              className="pt-8"
-            >
-              <div className="overflow-hidden rounded-[3rem] drop-shadow-xl">
-                <iframe
-                  src={site.event.location.myMapUrl}
-                  width="100%"
-                  height="400px"
-                ></iframe>
               </div>
             </Section>
           </div>
@@ -177,7 +159,7 @@ export default function Index(): ReactNode {
         </main>
 
         {/* Footer */}
-        <footer className="relative z-10 bg-theme-white  text-theme-gray  md:bg-opacity-0 md:text-white pt-0 pb-5 md:pt-5 text-center">
+        <footer className="relative z-10 bg-theme-white bg-[url('/image/cardbg.jpg')] text-theme-gray  md:bg-opacity-0 md:text-white pt-0 pb-5 md:pt-5 text-center">
           <span className="block md:inline-block">
             Made with ❤️ by{" "}
             <a

@@ -17,8 +17,8 @@ module.exports = {
       colors: {
         "theme-primary": colors.yellow[600],
         "theme-accent": colors.lime[700],
-        "theme-gray": colors.stone[600],
-        "theme-white": colors.orange[50],
+        "theme-gray": "#473425",
+        "theme-white": "#EEF0EB",
       },
     },
   },
