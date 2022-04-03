@@ -159,7 +159,7 @@ export default function Index(): ReactNode {
         </main>
 
         {/* Footer */}
-        <footer className="relative z-10 bg-theme-white bg-[url('/image/cardbg.jpg')] text-theme-gray  md:bg-opacity-0 md:text-white pt-0 pb-5 md:pt-5 text-center">
+        <footer className="relative z-10 bg-theme-white bg-[url('/image/cardbg.jpg')] text-theme-gray md:bg-none md:bg-opacity-0 md:text-white pt-0 pb-5 md:pt-5 text-center">
           <span className="block md:inline-block">
             Made with ❤️ by{" "}
             <a
