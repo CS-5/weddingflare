@@ -70,27 +70,50 @@ export default function Index(): ReactNode {
             <Section name="RSVP" className="mb-20">
               <RSVP />
             </Section>
-            <Section name="Information" className="pt-8">
-              <h2 className=" text-theme-accent text-xl font-bold">
-                Dress Code
-              </h2>
-              <p className="pb-4">Here is some info about the dress code</p>
-              <h2 className=" text-theme-accent text-xl font-bold">
-                Other thing
-              </h2>
-              <p className="pb-4">Words</p>
-              <h2 className="text-theme-accent text-xl font-bold">
-                Yet another thing
-              </h2>
-              <p className="pb-4">Words</p>
+            <Section name="Information" className="mb-8">
+              <Subheader
+                name="Venue"
+                tagline="Please refer to your RSVP card for the venue's address"
+              />
+              <p className="pb-4">
+                The wedding and reception will be outdoors near a wooded area
+                and stream. A fire pit and yard games will be available for your
+                enjoyment and a portable facility (outhouse) and washing station
+                are on site.
+              </p>
+              <Subheader
+                name="Menu"
+                tagline="Catered by The Barbecue Machine"
+              />
+              <p className="pb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h3 className="font-semibold">Main Course</h3>
+                  <ul className="list-disc pl-5">
+                    <li>Pulled Pork</li>
+                    <li>Macaroni & Cheese</li>
+                    <li>Green Beans with Bacon</li>
+                    <li>Scalloped Potatoes</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-semibold">Dessert</h3>
+                  <p>Vanilla, Chocolate, and Raspberry Cream Cheese cupcakes</p>
+                </div>
+              </p>
+              <Subheader name="Other Details" />
+              <p className="pb-4 prose">
+                <ul>
+                  <li>The dress code is semi-formal</li>
+                  <li></li>
+                </ul>
+              </p>
             </Section>
-            <Section name="Registry" className="pt-8">
+            <Section name="Registry" className="mb-8 pb-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="md:col-span-2 text-center pb-4 font-semibold">
-                  We are using Amazon and Target to handle our wedding registry.
-                  Click the images below to be taken to their respective
-                  websites. There will also be a jar for a honeymoon fund at the
-                  wedding.
+                <div className="md:col-span-2 text-center pb-4">
+                  We are using Amazon and Target for our wedding registry. Click
+                  the images below to be taken to their respective websites.
+                  There will also be a jar for a honeymoon fund at the wedding.
                 </div>
                 <a
                   href="
