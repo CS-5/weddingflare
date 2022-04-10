@@ -2,14 +2,13 @@ import { ReactNode } from "react";
 import Head from "next/head";
 import RSVP from "../components/RSVP";
 import Section from "../components/Section";
-
-import site from "../site.json";
+import Subheader from "../components/subheader";
 
 export default function Index(): ReactNode {
   return (
     <>
       <Head>
-        <title>{site.name}</title>
+        <title>Carson & Tatianna</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="robots" content="noindex" />
       </Head>
@@ -36,10 +35,8 @@ export default function Index(): ReactNode {
           <h2 className="mt-[-1rem] md:mt-8 font-serif text-2xl md:text-3xl text-white">
             <span className="block md:hidden">&mdash;</span>
             <span className="block md:inline-block">
-              {new Date(
-                `${site.event.date} ${site.event.time}`
-              ).toLocaleDateString("en-US", {
-                timeZone: site.event.timezone,
+              {new Date(`06/12/2022 15:00`).toLocaleDateString("en-US", {
+                timeZone: "America/New_York",
                 month: "long",
                 day: "numeric",
                 year: "numeric",
@@ -47,7 +44,7 @@ export default function Index(): ReactNode {
             </span>
             <span className="hidden md:inline-block">&nbsp;&mdash;&nbsp;</span>
             <span className="block text-1xl md:inline-block">
-              {site.event.location.address}
+              Shippensburg, PA
             </span>
           </h2>
         </header>
