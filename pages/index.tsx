@@ -75,17 +75,17 @@ export default function Index(): ReactNode {
                 name="Venue"
                 tagline="Please refer to your RSVP card for the venue's address"
               />
-              <p className="pb-4">
+              <div className="pb-4">
                 The wedding and reception will be outdoors near a wooded area
                 and stream. A fire pit and yard games will be available for your
                 enjoyment and a portable facility (outhouse) and washing station
                 are on site.
-              </p>
+              </div>
               <Subheader
                 name="Menu"
                 tagline="Catered by The Barbecue Machine"
               />
-              <p className="pb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="pb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <h3 className="font-semibold">Main Course</h3>
                   <ul className="list-disc pl-5">
@@ -97,16 +97,18 @@ export default function Index(): ReactNode {
                 </div>
                 <div>
                   <h3 className="font-semibold">Dessert</h3>
-                  <p>Vanilla, Chocolate, and Raspberry Cream Cheese cupcakes</p>
+                  <div>
+                    Vanilla, Chocolate, and Raspberry Cream Cheese cupcakes
+                  </div>
                 </div>
-              </p>
+              </div>
               <Subheader name="Other Details" />
-              <p className="pb-4 prose">
+              <div className="pb-4 prose">
                 <ul>
                   <li>The dress code is semi-formal</li>
                   <li></li>
                 </ul>
-              </p>
+              </div>
             </Section>
             <Section name="Registry" className="mb-8 pb-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
