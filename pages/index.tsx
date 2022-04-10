@@ -50,7 +50,7 @@ export default function Index(): ReactNode {
         </header>
 
         {/* Main */}
-        <main className="relative bg-theme-white bg-[url('/image/cardbg.jpg')] text-theme-gray rounded-t-[3rem] mx-auto mt-[42rem] md:mt-[48rem] lg:mt-[40rem] md:rounded-[3rem] md:shadow-2xl text-lg leading-8 p-8 md:w-10/12 lg:w-[48rem]">
+        <main className="relative bg-theme-white bg-[url('/image/cardbg.jpg')] text-theme-gray rounded-t-[3rem] mx-auto mt-[42rem] md:mt-[48rem] lg:mt-[40rem] md:rounded-[3rem] md:shadow-2xl text-lg leading-8 py-8 px-12 md:px-20 md:w-10/12 lg:w-[48rem]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-12 w-12 text-theme-primary mx-auto animate-bounce"
@@ -66,8 +66,8 @@ export default function Index(): ReactNode {
             />
           </svg>
 
-          <div className="relative z-10">
-            <Section name="RSVP" className="pt-8">
+          <div className="relative z-10 pt-8 md:px-14">
+            <Section name="RSVP" className="mb-20">
               <RSVP />
             </Section>
             <Section name="Information" className="pt-8">
@@ -101,7 +101,7 @@ export default function Index(): ReactNode {
                   <img
                     src="/image/amazon.webp"
                     alt="Amazon"
-                    className="h-16 m-auto"
+                    className="transition duration-300 ease-in-out h-16 m-auto opacity-75 hover:opacity-100 grayscale hover:grayscale-0"
                     style={{ imageRendering: "-webkit-optimize-contrast" }}
                   />
                 </a>
@@ -113,7 +113,7 @@ export default function Index(): ReactNode {
                   <img
                     src="/image/target.webp"
                     alt="Target"
-                    className="h-16 mx-auto md:-mt-2"
+                    className="transition duration-300 ease-in-out h-14 mx-auto md:-mt-2 opacity-75 hover:opacity-100 grayscale hover:grayscale-0"
                     style={{ imageRendering: "-webkit-optimize-contrast" }}
                   />
                 </a>
