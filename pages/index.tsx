@@ -73,13 +73,17 @@ export default function Index(): ReactNode {
             <Section name="Information" className="mb-8">
               <Subheader
                 name="Venue"
-                tagline="Please refer to your RSVP card for the venue's address"
+                tagline="Please refer to your invitation for the venue's address"
               />
               <div className="pb-4">
                 The wedding and reception will be outdoors near a wooded area
                 and stream. A fire pit and yard games will be available for your
-                enjoyment and a portable facility (outhouse) and washing station
-                are on site.
+                enjoyment.
+              </div>
+              <Subheader name="Attire" />
+              <div className="pb-4">
+                Dressy casual and consider wearing footwear suitable for uneven
+                ground.
               </div>
               <Subheader
                 name="Menu"
@@ -102,15 +106,8 @@ export default function Index(): ReactNode {
                   </div>
                 </div>
               </div>
-              <Subheader name="Other Details" />
-              <div className="pb-4 prose">
-                <ul>
-                  <li>The dress code is semi-formal</li>
-                  <li></li>
-                </ul>
-              </div>
             </Section>
-            <Section name="Registry" className="mb-8 pb-10">
+            <Section name="Registry" className="mb-8 md:pb-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="md:col-span-2 text-center pb-4">
                   We are using Amazon and Target for our wedding registry. Click
