@@ -5,6 +5,7 @@ interface Props {
   url?: string;
   children: ReactNode;
   className?: string;
+  id?: string;
 }
 
 const Section: FunctionComponent<Props> = ({
@@ -12,9 +13,13 @@ const Section: FunctionComponent<Props> = ({
   url,
   children,
   className,
+  id,
 }) => {
   const header = (
-    <h1 className="pb-4 text-theme-primary text-3xl font-serif font-bold text-center">
+    <h1
+      id={id}
+      className="pb-4 text-theme-primary text-3xl font-serif font-bold text-center"
+    >
       {name}
     </h1>
   );
