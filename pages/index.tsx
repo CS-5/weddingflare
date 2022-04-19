@@ -26,9 +26,13 @@ export default function Index(): ReactNode {
           />
         </div>
 
-        <div className="relative bg-theme-white bg-[url('/image/cardbg.jpg')] mx-auto md:my-10 md:rounded-[3rem] md:shadow-2xl md:w-10/12 lg:w-[48rem]">
+        <div className="relative bg-theme-white bg-[url('/image/cardbg.jpg')] mx-auto md:my-10 md:rounded-[3rem] md:shadow-2xl md:w-10/12 lg:w-[48rem] px-12 md:px-20 ">
           {/* Header */}
           <header className="relative z-10 text-center pt-6 md:pt-28">
+            <h2 className="font-serif text-2xl md:text-3xl text-theme-gray">
+              You are invited to the wedding of
+            </h2>
+
             <h1 className="font-cursive text-6xl md:text-8xl text-theme-primary text-shadow-l">
               <span className="block md:inline-block">
                 <span className="text-9xl">C</span>arson &{" "}
@@ -38,6 +42,7 @@ export default function Index(): ReactNode {
 
             <h2 className="mt-4 md:mt-8 font-serif text-2xl md:text-3xl text-theme-gray">
               <span className="block md:inline-block">
+                On{" "}
                 {dateTime.toLocaleDateString("en-US", {
                   timeZone: "America/New_York",
                   month: "long",
@@ -52,17 +57,12 @@ export default function Index(): ReactNode {
                   minute: "numeric",
                 })}
               </span>
-              <span className="hidden md:inline-block">
-                &nbsp;&mdash;&nbsp;
-              </span>
-              <span className="block text-1xl md:inline-block">
-                Shippensburg, PA
-              </span>
+              <span className="block text-1xl">in Shippensburg, PA</span>
             </h2>
           </header>
 
           {/* Main */}
-          <main className="relative z-10 pt-8 text-theme-gray text-lg leading-8 py-8 px-12 md:px-20 ">
+          <main className="relative z-10 pt-8 text-theme-gray text-lg leading-8 py-8">
             <Section name="RSVP" id="rsvp" className="mb-20">
               <RSVP />
             </Section>
