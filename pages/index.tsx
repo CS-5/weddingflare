@@ -26,9 +26,9 @@ export default function Index(): ReactNode {
           />
         </div>
 
-        <div className="relative bg-theme-white bg-[url('/image/cardbg.jpg')] mx-auto md:my-10 md:rounded-[3rem] md:shadow-2xl md:w-10/12 lg:w-[48rem] px-12 md:px-20 ">
+        <div className="relative bg-theme-white bg-[url('/image/cardbg.jpg')] mx-auto md:my-20 md:rounded-[3rem] md:shadow-2xl md:w-10/12 lg:w-[48rem] px-12 md:px-20 ">
           {/* Header */}
-          <header className="relative z-10 text-center pt-6 md:pt-28">
+          <header className="relative z-10 text-center pt-16 md:pt-28">
             <h2 className="font-serif text-2xl md:text-3xl text-theme-gray">
               You are invited to the wedding of
             </h2>
@@ -144,7 +144,7 @@ export default function Index(): ReactNode {
           </main>
 
           {/* Footer */}
-          <footer className="relative z-10 text-theme-gray pb-5 text-center font-medium">
+          <footer className="relative z-10 text-theme-gray pb-16 text-center font-medium">
             <span className="block md:inline-block">
               Made with ❤️ by{" "}
               <a
