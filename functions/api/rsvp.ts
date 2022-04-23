@@ -5,6 +5,16 @@ export const onRequestPost: PagesFunction<{
   WF_RSVP_RESPONSES: KVNamespace;
   WF_SHEETS_ENDPOINT: string;
 }> = async ({ request, env }) => {
+  if (!env.WF_SHEETS_ENDPOINT) {
+    return response(
+      {
+        success: false,
+        message: "WF_SHEETS_ENDPOINT is not defined in the environment",
+      },
+      500
+    );
+  }
+
   const rsvp: RSVP = await request.json();
 
   if (!rsvp) {
@@ -26,8 +36,19 @@ export const onRequestPost: PagesFunction<{
       await addKVRSVP(env.WF_RSVP_RESPONSES, rsvp);
 
     // RSVP > Google Sheets
-    if (env.WF_SHEETS_ENDPOINT)
-      await addSheetRSVP(env.WF_SHEETS_ENDPOINT, rsvp);
+    if (env.WF_SHEETS_ENDPOINT) {
+      const res = await addSheetRSVP(env.WF_SHEETS_ENDPOINT, rsvp);
+
+      if (res.status !== 200) {
+        return response(
+          {
+            success: false,
+            message: "Failed to add RSVP to Google Sheets",
+          },
+          res.status
+        );
+      }
+    }
 
     return response(
       { success: true, message: "RSVP Successful", result: rsvp },
