@@ -77,6 +77,8 @@ const addSheetRSVP = async (
   endpoint: string,
   rsvp: RSVP
 ): Promise<Response> => {
+  rsvp.number = rsvp.number || 0;
+
   return await fetch(endpoint, {
     method: "POST",
     headers: {
