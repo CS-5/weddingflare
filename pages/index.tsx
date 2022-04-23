@@ -84,10 +84,7 @@ export default function Index(): ReactNode {
                 outdoor venue on grass and uneven ground.
               </div>
 
-              <Subheader
-                name="Menu"
-                tagline="Catered by The Barbecue Machine"
-              />
+              <Subheader name="Menu" />
               <div className="pb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <h3 className="font-semibold">Main Course</h3>
