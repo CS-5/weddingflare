@@ -99,10 +99,12 @@ export default function Index(): ReactNode {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold">Dessert</h3>
-                  <div>
-                    Vanilla, Chocolate, and Raspberry Cream Cheese cupcakes
-                  </div>
+                  <h3 className="font-semibold">Dessert: Cupcakes</h3>
+                  <ul className="list-disc pl-5">
+                    <li>Vanilla</li>
+                    <li>Chocolate</li>
+                    <li>Raspberry</li>
+                  </ul>
                 </div>
               </div>
             </Section>
