@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import Head from "next/head";
-import RSVP from "../components/RSVP";
 import Section from "../components/Section";
 import Subheader from "../components/subheader";
 
@@ -63,11 +62,19 @@ export default function Index(): ReactNode {
 
           {/* Main */}
           <main className="relative z-10 pt-8 text-theme-gray text-lg leading-8 py-8">
-            <Section name="RSVP" id="rsvp" className="mb-20">
-              <RSVP />
-            </Section>
-
             <Section name="Information" id="info" className="mb-8">
+              <Subheader name="Schedule" />
+              <div className="pb-4">
+                The wedding ceremony will start at 3PM on Sunday, June 12th. The
+                ceremony will be followed by a short break before the reception
+                offically starts starts under the tent.
+                <br />
+                During the reception, there will be a large group picture taken
+                of us and all our guests in the meadow. Also during the
+                reception, yard games and other activities will be available in
+                the woods by the creek.
+              </div>
+
               <Subheader
                 name="Venue"
                 tagline="Please refer to your invitation for the venue's address"
