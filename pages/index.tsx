@@ -87,7 +87,7 @@ export default function Index(): ReactNode {
 
               <Subheader name="Attire" />
               <div className="pb-4">
-                Dressy casual and consider wearing footwear suitable for an
+                Business casual and consider wearing footwear suitable for an
                 outdoor venue on grass and uneven ground.
               </div>
 
