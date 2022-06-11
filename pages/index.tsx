@@ -41,20 +41,7 @@ export default function Index(): ReactNode {
 
             <h2 className="mt-4 md:mt-8 font-serif text-2xl md:text-3xl text-theme-gray">
               <span className="block md:inline-block">
-                On{" "}
-                {dateTime.toLocaleDateString("en-US", {
-                  timeZone: "America/New_York",
-                  month: "long",
-                  day: "numeric",
-                  year: "numeric",
-                })}{" "}
-                at{" "}
-                {dateTime.toLocaleTimeString("en-US", {
-                  timeZone: "America/New_York",
-                  hour12: true,
-                  hour: "numeric",
-                  minute: "numeric",
-                })}
+                On June 12, 2022 at 3:00 PM
               </span>
               <span className="block text-1xl">in Shippensburg, PA</span>
             </h2>
